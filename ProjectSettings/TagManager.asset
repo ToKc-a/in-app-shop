@@ -41,3 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ship
+    uniqueID: 2232671187
+    locked: 0

@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 73519357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 118720517}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: GoToGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &73519357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +256,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73519354}
   m_CullTransparentMesh: 1
+--- !u!1 &118720516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 118720518}
+  - component: {fileID: 118720517}
+  m_Layer: 0
+  m_Name: Main Menu Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &118720517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118720516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9988f51ebc8440f5a8fc7ef0f5272dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCoinText: {fileID: 1056410782}
+  currentCrystalText: {fileID: 753700092}
+--- !u!4 &118720518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118720516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &159267949
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +963,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056410780}
   m_CullTransparentMesh: 1
+--- !u!1 &1064147417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1064147419}
+  - component: {fileID: 1064147418}
+  - component: {fileID: 1064147420}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1064147418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064147417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0c04c42a98f4132964809a479ebf59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1064147419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064147417}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1064147420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064147417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a0f82fff6854f45a12a11ac2d1c137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipImages:
+  - {fileID: 21300000, guid: 6c1940a64565043719a068a9ad3e8cc5, type: 3}
+  - {fileID: 21300000, guid: 6d4915da7bd5f4a4da7696cb5220d1a4, type: 3}
+  - {fileID: 21300000, guid: 75821dce309464a898d4c49067400bad, type: 3}
+  - {fileID: 21300000, guid: eea990c4e53d548f1819ad12ef0b968a, type: 3}
+  - {fileID: 21300000, guid: 403f355f2b58749a88d84de3925fc944, type: 3}
+  - {fileID: 21300000, guid: 52d4842f2a72e421ba94a9b0b8ea4895, type: 3}
+  shipPrefabs:
+  - {fileID: 6321831354065304575, guid: e7349474c8e4941fab622720244a1e92, type: 3}
+  - {fileID: 6321831354065304575, guid: ea5e8a292e4fb4af8811fcb6171243c6, type: 3}
+  - {fileID: 6321831354065304575, guid: afaa26822651e47d8b80c4081577f6be, type: 3}
+  - {fileID: 6321831354065304575, guid: 1ecf60dee44534d4eacd68428ae5fe3e, type: 3}
+  - {fileID: 6321831354065304575, guid: 4a32968c72a944b5eacd2d1d9d5606fe, type: 3}
+  - {fileID: 6321831354065304575, guid: 5ef63049d01fa48cfb07e16dfd16be31, type: 3}
 --- !u!1 &1259859863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,7 +1194,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1696156572}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 118720517}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: GoToStore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1696156572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1254,7 +1393,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1737116492}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 118720517}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: AddCoins
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1737116492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1756,7 +1907,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2128683458}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 118720517}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: AddCrystals
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2128683458
 MonoBehaviour:
   m_ObjectHideFlags: 0
