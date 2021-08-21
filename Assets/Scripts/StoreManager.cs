@@ -6,7 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class StoreManager : MonoBehaviour
 {
+    public static StoreManager instance;
+
     public GameObject cardPanelPrefab;
+    public GameObject scrollArea;
+    public Text coinCountText;
+    public Text crystalCountText;
+    public GameObject notEnoughMoneyPanel;
+    public GameObject equippedShipPanel;
+
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("Main Menu");
@@ -14,7 +22,27 @@ public class StoreManager : MonoBehaviour
 
     void Awake()
     {
+        MakeInstance();
         MakeCardPanels();
+        AddScrollAbilities();
+    }
+
+    void MakeInstance()
+    {
+        if (instance == null)
+            instance = this;
+    }
+
+    void AddScrollAbilities()
+    {
+        scrollArea.AddComponent<ScrollRect>();
+        scrollArea.GetComponent<ScrollRect>().vertical = false;
+        scrollArea.GetComponent<ScrollRect>().movementType = ScrollRect.MovementType.Elastic;
+
+        RectTransform scrollTransform = GameObject.Find("Card Holder").GetComponent<RectTransform>();
+        float scrollLength = 400 * GameManager.instance.GetComponent<ShipArray>().shipPrefabs.Length;
+        scrollTransform.sizeDelta = new Vector2(scrollLength, 0);
+        scrollArea.GetComponent<ScrollRect>().content = scrollTransform;
     }
 
     void MakeCardPanels()
@@ -106,5 +134,36 @@ public class StoreManager : MonoBehaviour
 
             }
         }
+    }
+
+    void Update()
+    {
+        coinCountText.text = GameManager.CoinCount.ToString();
+        crystalCountText.text = GameManager.CrystalCount.ToString();
+    }
+
+    public void CloseNotEnoughMoneyPanel()
+    {
+        StoreManager.instance.notEnoughMoneyPanel.gameObject.SetActive(false);
+    }
+
+    public void EquippedNewShip(string shipName, Sprite shipImage)
+    {
+        equippedShipPanel.GetComponentInChildren<Text>().text = shipName;
+        GameObject g = GameObject.Find("Ship Image");
+
+        if(g.transform.parent.name == "Equipped Panel")
+        {
+            GameObject.Find("Ship Image").GetComponent<Image>().sprite = shipImage;
+        }
+
+        StartCoroutine(EquippedNewShipAnimationWait());
+    }
+
+    IEnumerator EquippedNewShipAnimationWait()
+    {
+        equippedShipPanel.GetComponent<Animator>().Play("EquippedPanelAnimIn");
+        yield return new WaitForSeconds(1.5f);
+        equippedShipPanel.GetComponent<Animator>().Play("EquippedPanelAnimOut");
     }
 }
